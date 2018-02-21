@@ -3,11 +3,12 @@
     color: white;
     border-radius: 0;
     width: 100%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     font-family: 'Helvetica Neue';
     position: fixed;
     box-shadow: 0 2px 30px 0 black;
     z-index: 99;
+    font-size: calc(11px + 10 * (140vw - 320px)/ 2500);
 }
 
 ul {
@@ -19,7 +20,7 @@ ul {
 
 ul li {
     display: inline-block;
-    padding: 20px 0;
+    padding: 20px 20px;
 }
 
 a {
@@ -28,4 +29,9 @@ a {
     color: #fff;
     font-weight: bold;
     line-height: 1px;
+}
+
+a:hover {
+    color: rgb(221, 220, 220);
+    text-decoration: none;
 }
