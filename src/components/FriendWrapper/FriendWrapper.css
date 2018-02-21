@@ -1,0 +1,15 @@
+.wrapper {
+    background: #ECEFF1;
+    height: 100%;
+    padding: 50px;
+}
+
+.friend-div {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: auto;
+}

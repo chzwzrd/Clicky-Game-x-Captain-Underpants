@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import FriendWrapper from '../FriendWrapper';
 import FriendCard from '../FriendCard';
 import friends from '../../friends.json';
-import './Main.css';
+import './FriendWrapper.css';
 
-class Main extends Component {
+class FriendWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,9 +13,9 @@ class Main extends Component {
 
     render() {
         return (
-            <div className="main">
-                <FriendWrapper>
-                    {this.state.friends.map(friend => 
+            <div className="wrapper">
+                <div className="friend-div">
+                    {this.state.friends.map(friend =>
                         <FriendCard
                             id={friend.id}
                             key={friend.id}
@@ -24,10 +23,10 @@ class Main extends Component {
                             image={friend.image}
                         />
                     )}
-                </FriendWrapper>
+                </div>
             </div>
         );
     };
 };
 
-export default Main;
+export default FriendWrapper;
