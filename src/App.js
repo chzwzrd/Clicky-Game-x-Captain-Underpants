@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Jumbotron from './components/Jumbotron';
 import FriendWrapper from './components/FriendWrapper';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Header />
         <Jumbotron />
         <FriendWrapper />
+        <Footer />
       </div>
     );
   }
