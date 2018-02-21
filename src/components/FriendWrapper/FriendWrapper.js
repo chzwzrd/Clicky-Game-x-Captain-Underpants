@@ -11,6 +11,10 @@ class FriendWrapper extends Component {
         };
     }
 
+    handleClick = () => {
+        alert('hello!');
+    };
+
     render() {
         return (
             <div className="wrapper">
@@ -21,6 +25,7 @@ class FriendWrapper extends Component {
                             key={friend.id}
                             name={friend.name}
                             image={friend.image}
+                            onClick={this.handleClick}
                         />
                     )}
                 </div>
