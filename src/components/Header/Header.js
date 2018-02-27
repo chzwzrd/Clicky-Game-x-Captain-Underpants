@@ -1,28 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Header.css';
+import Question from '../Question';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            score: 0,
-            topScore: 0
-        };
-    };
-
-    render() {
-        return (
-            <div>
-                <nav className="navbar">
-                    <ul>
-                        <li className="brand"><a href="/">Clicky Game</a></li>
-                        <li>Click on an image to start!</li>
-                        <li>Score: {this.state.score} | Top Score: {this.state.topScore}</li>
-                    </ul>
-                </nav>
-            </div>
-        );
-    };
-};
+const Header = props =>
+    <div>
+        <nav className="navbar">
+            <ul>
+                <li className="brand"><a href="/">Clicky Game</a></li>
+                <Question />
+                <li>Score: {props.score} | Top Score: {props.topScore}</li>
+            </ul>
+        </nav>
+    </div>;
 
 export default Header;

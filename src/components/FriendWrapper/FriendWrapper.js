@@ -9,6 +9,7 @@ class FriendWrapper extends Component {
         this.state = {
             friends
         };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick = () => {
@@ -25,6 +26,7 @@ class FriendWrapper extends Component {
                             key={friend.id}
                             name={friend.name}
                             image={friend.image}
+                            handleClick={this.handleClick}
                         />
                     )}
                 </div>
