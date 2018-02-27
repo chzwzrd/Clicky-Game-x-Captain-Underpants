@@ -1,102 +1,130 @@
 [
     {
-        "number": 1,
         "question": "Who is a scientist from New Swissland?",
         "answer": "Professory Poopypants"
     },
     {
-        "number": 2,
         "question": "Who has major insecurity issues?",
         "answer": "Professory Poopypants"
     },
     {
-        "number": 3,
         "question": "Whose real name is Tippy Tinkletrousers?",
         "answer": "Professory Poopypants"
     },
     {
-        "number": 4,
         "question": "Who has plans to shrink the whole world?",
         "answer": "Professory Poopypants"
     },
     {
-        "number": 5,
         "question": "Who is Harold's best friend?",
         "answer": "George Beard"
     },
     {
-        "number": 6,
         "question": "Who orders a 3D Hypno-Ring to hypnotize the principal?",
         "answer": "George Beard"
     },
     {
-        "number": 7,
         "question": "Whose favorite food is chocolate chip cookies?",
         "answer": "George Beard"
     },
     {
-        "number": 8,
         "question": "Who has a tree house in his backyard?",
         "answer": "George Beard"
     },
     {
-        "number": 9,
         "question": "Who writes for Tree House Comix, Inc.?",
         "answer": "George Beard"
     },
     {
-        "number": 10,
         "question": "Who draws for Tree House Comix, Inc.?",
         "answer": "Harold Hutchins"
     },
     {
-        "number": 11,
         "question": "Whose favorite food is gum?",
         "answer": "Harold Hutchins"
     },
     {
-        "number": 12,
-        "question": "Who used to be bullied in school?",
+        "question": "Who used to get bullied in school?",
         "answer": "Harold Hutchins"
     },
     {
-        "number": 13,
         "question": "Who is the principal of Jerome Horwitz Elementary?",
         "answer": "Mr. Krupp"
     },
     {
-        "number": 14,
+        "question": "Who wears a toupee?",
+        "answer": "Mr. Krupp"
+    },
+    {
         "question": "Whose alter ego is Captain Underpants?",
         "answer": "Mr. Krupp"
     },
     {
-        "number": 15,
         "question": "Who can't stand Harold and George?",
         "answer": "Mr. Krupp"
     },
     {
-        "number": 16,
         "question": "Who has a crush on Edith the lunch lady?",
         "answer": "Mr. Krupp"
     },
     {
-        "number": 17,
         "question": "Whose has the power of the wedgie?",
         "answer": "Captain Underpants"
     },
     {
-        "number": 18,
         "question": "Whose alter ego is a cranky school principal?",
         "answer": "Captain Underpants"
     },
     {
-        "number": 19,
         "question": "Whose enemy is Professor Poopypants?",
         "answer": "Captain Underpants"
     },
     {
-        "number": 20,
         "question": "Whose weakness is water and spray starch?",
         "answer": "Captain Underpants"
+    },
+    {
+        "question": "Who is the class tattletale?",
+        "answer": "Melvin Sneedly"
+    },
+    {
+        "question": "Who became the Bionic Booger Boy?",
+        "answer": "Melvin Sneedly"
+    },
+    {
+        "question": "Who is Professor Poopypants sidekick?",
+        "answer": "Melvin Sneedly"
+    },
+    {
+        "question": "Who is the first comic book character created by George & Harold?",
+        "answer": "Dog Man"
+    },
+    {
+        "question": "Who is the lunch lady at Jerome Horwitz Elementary School?",
+        "answer": "Edith"
+    },
+    {
+        "question": "Who makes really good tune casserole?",
+        "answer": "Edith"
+    },
+    {
+        "question": "Who could possibly have a crush on Mr. Krupp?",
+        "answer": "Edith the Lunch Lady"
+    },
+    {
+        "question": "Who is one of Melvin Sneedly's inventions?",
+        "answer": "Turbo Toilet 2000"
+    },
+    {
+        "question": "Who gets enlarged by Professory Poopypants?",
+        "answer": "Turbo Toilet 2000"
+    },
+    {
+        "question": "Who swallows up Captain Underpants?",
+        "answer": "Turbo Toilet 2000"
+    },
+    {
+        "question": "Who malfunctions from George & Harold's laughter?",
+        "answer": "Turbo Toilet 2000"
     }
 ]
