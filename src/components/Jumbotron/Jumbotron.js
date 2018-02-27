@@ -9,7 +9,7 @@ class Jumbotron extends Component {
                 <div className="background-img"></div>
                 <div className="caption">
                     <h1>Clicky Game x Captain Underpants</h1>
-                    <p>Answer the questions above by clicking on a character!</p>
+                    <p>Answer the questions above by clicking on a character below!</p>
                 </div>
             </div>
         );

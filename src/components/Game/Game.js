@@ -7,18 +7,34 @@ import Modal from 'react-modal';
 import friends from '../../friends.json';
 import questions from '../../questions.json';
 
-const modalStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        width: '30rem',
-        height: '30rem',
-        textAlign: 'center',
-        borderRadius: '10px'
+const styles = {
+    modalStyles: {
+        overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.589)',
+            position: 'fixed',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0'
+        },
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: '30rem',
+            height: '20rem',
+            textAlign: 'center',
+            borderRadius: '10px'
+        }
+    },
+    messageStyles: {
+        margin: '30px 10px 20px'
+    },
+    buttonStyles: {
+        margin: 'auto 5px'
     }
 };
 
@@ -27,22 +43,25 @@ class Game extends Component {
         super(props);
         this.state = {
             score: 0,
+            questionNum: 1,
             question: '',
             answer: '',
             friends: friends,
             modalIsOpen: false,
-            modalMessage: ''
+            isCorrect: ''
         };
-        this.handleClick = this.handleClick.bind(this);
         this.openModal = this.openModal.bind(this);
         // this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleGuess = this.handleGuess.bind(this);
+        this.handleGameStart = this.handleGameStart.bind(this);
+        this.handleGameEnd = this.handleGameEnd.bind(this);
     };
 
     componentDidMount = () => {
         console.log(questions.length);
         this.generateQuestion();
-        this.openModal();
     };
 
     openModal = (message) => {
@@ -58,16 +77,20 @@ class Game extends Component {
         this.setState({ modalIsOpen: false });
     };
 
+    handleGameStart = () => {
+        window.location.reload();
+    };
+
     handleGameEnd = () => {
-        const yayMessage = "Wowza, looks like someone's a true fan. Good work!";
-        const poopMessage = "What?? Captain Underpants is insulted...";
-        const okayMessage = "Oof, looks like someone needs to revisit their childhood..."
-        if (this.state.score === 32) {
+        const yayMessage = "Wowza, you're a true fan. The Captain salutes you!";
+        const okayMessage = "Oof, someone's out of touch with their inner child...";
+        const poopMessage = `${this.state.score}/32?? the Captain is insulted...`;
+        if (this.state.score >=25) {
             this.openModal(yayMessage);
-        } else if (this.state.score === 0) {
-            this.openModal(poopMessage);
-        } else {
+        } else if (this.state.score >= 16 && this.state.score < 25) {
             this.openModal(okayMessage);
+        } else {
+            this.openModal(poopMessage);
         }
     };
 
@@ -77,7 +100,7 @@ class Game extends Component {
             const question = questionObj.question;
             const answer = questionObj.answer;
             this.removeQuestion(questionObj);
-            return this.setState({ question: question, answer: answer });
+            return this.setState({ question: question, answer: answer, questionNum: 32 - questions.length });
         } else {
             this.handleGameEnd();
         }
@@ -92,11 +115,12 @@ class Game extends Component {
     handleGuess = guess => {
         if (guess === this.state.answer) {
             const newScore = this.state.score + 1;
-            this.setState({ score: newScore });
+            this.setState({ score: newScore, isCorrect: true });
 
             console.log('Awesome!');
             this.generateQuestion();
         } else {
+            this.setState({ isCorrect: false });
             console.log('Poop...');
             this.generateQuestion();
         }
@@ -113,6 +137,8 @@ class Game extends Component {
             <div>
                 <Header
                     score={this.state.score}
+                    isCorrect={this.state.isCorrect}
+                    questionNum={this.state.questionNum}
                     question={this.state.question}
                     answer={this.state.answer}
                 />
@@ -125,12 +151,22 @@ class Game extends Component {
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
-                    style={modalStyles}
+                    style={styles.modalStyles}
                     contentLabel='Example Modal'
+                    shouldCloseOnOverlayClick={true}
                 >
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-                    <div>{this.state.modalMessage}</div>
-                    <button onClick={this.closeModal}>close</button>
+                    {/* <h2 ref={subtitle => this.subtitle = subtitle}></h2> */}
+                    <div style={styles.messageStyles}>{this.state.modalMessage}</div>
+                    <button 
+                        className='btn btn-default'
+                        style={styles.buttonStyles}
+                        onClick={this.closeModal}
+                    >Close</button>
+                    <button
+                        className='btn btn-info'
+                        style={styles.buttonStyles}
+                        onClick={this.handleGameStart}
+                    >Play Again</button>
                 </Modal>
                 <Footer />
             </div>
