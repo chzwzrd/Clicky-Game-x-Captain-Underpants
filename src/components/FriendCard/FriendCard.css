@@ -19,8 +19,13 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, .16),
     0 3px 6px rgba(0, 0, 0, .23);
     cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 .card>img {
     width: 60%;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }

@@ -117,11 +117,11 @@ class Game extends Component {
             const newScore = this.state.score + 1;
             this.setState({ score: newScore, isCorrect: true });
 
-            console.log('Awesome!');
+            // console.log('Awesome!');
             this.generateQuestion();
         } else {
             this.setState({ isCorrect: false });
-            console.log('Poop...');
+            // console.log('Poop...');
             this.generateQuestion();
         }
     };
