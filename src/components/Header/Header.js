@@ -7,7 +7,7 @@ const Header = props =>
         <nav className="navbar">
             <ul>
                 <li className="brand"><a href="/">Clicky Game</a></li>
-                <Question />
+                <li><Question question={props.question} answer={props.answer} /></li>
                 <li>Score: {props.score} | Top Score: {props.topScore}</li>
             </ul>
         </nav>

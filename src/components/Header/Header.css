@@ -33,8 +33,7 @@ a {
 }
 
 a:hover {
-    color: rgb(221, 220, 220);
-    text-decoration: none;
+    color: white;
 }
 
 @media (max-width: 420px) {
