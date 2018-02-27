@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import './Header.css';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            score: 0,
+            topScore: 0
+        };
+    };
+
     render() {
         return (
             <div>
@@ -9,7 +17,7 @@ class Header extends Component {
                     <ul>
                         <li className="brand"><a href="/">Clicky Game</a></li>
                         <li>Click on an image to start!</li>
-                        <li>Score: 0 | Top Score: 0</li>
+                        <li>Score: {this.state.score} | Top Score: {this.state.topScore}</li>
                     </ul>
                 </nav>
             </div>

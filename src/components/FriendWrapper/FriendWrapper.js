@@ -25,7 +25,6 @@ class FriendWrapper extends Component {
                             key={friend.id}
                             name={friend.name}
                             image={friend.image}
-                            onClick={this.handleClick}
                         />
                     )}
                 </div>
