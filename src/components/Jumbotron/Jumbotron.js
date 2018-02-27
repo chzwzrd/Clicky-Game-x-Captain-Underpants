@@ -8,8 +8,8 @@ class Jumbotron extends Component {
                 <div className="overlay"></div>
                 <div className="background-img"></div>
                 <div className="caption">
-                    <h1>Clicky Game!</h1>
-                    <p>Click on an image to earn points, but don't click on any more than once!</p>
+                    <h1>Clicky Game x Captain Underpants</h1>
+                    <p>Answer the questions above by clicking on a character!</p>
                 </div>
             </div>
         );

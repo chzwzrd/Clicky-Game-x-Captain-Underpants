@@ -28,10 +28,23 @@
 
 .jumbotron .caption {
     position: absolute;
-    top: 36%;
+    top: 37%;
     width: 100%;
     color: white;
     text-align: center;
     text-shadow: 0 2px 30px black;
     padding: 0 20px;
+}
+
+.jumbotron .caption h1 {
+    width: 70%;
+    margin: auto;
+    font-size: calc(26px + 35 * (140vw - 320px)/ 2000);
+    margin-bottom: 25px;
+}
+    
+.jumbotron .caption p {
+    width: 70%;
+    margin: auto;
+    font-size: calc(16px + 10 * (140vw - 320px)/ 2000);
 }
