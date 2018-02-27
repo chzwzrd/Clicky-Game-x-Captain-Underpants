@@ -1,7 +1,8 @@
 .wrapper {
+    /* background: rgb(224, 224, 224); */
     background: rgb(32, 32, 32);
     height: 100%;
-    padding: 50px;
+    padding: 50px 50px 60px;
 }
 
 .friend-div {

@@ -27,14 +27,16 @@ const styles = {
             width: '30rem',
             height: '20rem',
             textAlign: 'center',
-            borderRadius: '10px'
+            borderRadius: '10px',
+            fontSize: '16px',
+            fontWeight: 'bold'
         }
     },
     messageStyles: {
-        margin: '30px 10px 20px'
+        margin: '25px 10px 20px'
     },
     buttonStyles: {
-        margin: 'auto 5px'
+        margin: '5px 5px auto'
     }
 };
 
