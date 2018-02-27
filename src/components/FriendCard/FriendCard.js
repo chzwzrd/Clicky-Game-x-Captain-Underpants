@@ -8,6 +8,10 @@ const FriendCard = props =>
             backgroundSize: 'cover',
             backgroundPosition: '50%'
         }}
+        key={props.id}
+        id={props.id}
+        name={props.name}
+        image={props.image}
         onClick={props.handleClick}>
     </div>;
 

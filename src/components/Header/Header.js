@@ -8,7 +8,7 @@ const Header = props =>
             <ul>
                 <li className="brand"><a href="/">Clicky Game</a></li>
                 <li><Question question={props.question} answer={props.answer} /></li>
-                <li>Score: {props.score} | Top Score: {props.topScore}</li>
+                <li>Score: {props.score} / 32 </li>
             </ul>
         </nav>
     </div>;
