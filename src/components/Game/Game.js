@@ -35,6 +35,9 @@ const styles = {
     messageStyles: {
         margin: '25px 10px 20px'
     },
+    yayMessageStyles: {
+        margin: '25px 20px 20px'
+    },
     buttonStyles: {
         margin: '5px 5px auto'
     }
@@ -55,6 +58,9 @@ class Game extends Component {
         this.openModal = this.openModal.bind(this);
         // this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.generateQuestion = this.generateQuestion.bind(this);
+        this.removeQuestion = this.removeQuestion.bind(this);
+        this.shuffleCards = this.shuffleCards.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleGuess = this.handleGuess.bind(this);
         this.handleGameStart = this.handleGameStart.bind(this);
@@ -62,8 +68,10 @@ class Game extends Component {
     };
 
     componentDidMount = () => {
+        // const yayMessage = "Tra-la-laaa! Cheers to a true fan.";
         console.log(questions.length);
         this.generateQuestion();
+        // this.openModal(yayMessage);
     };
 
     openModal = (message) => {
@@ -84,9 +92,9 @@ class Game extends Component {
     };
 
     handleGameEnd = () => {
-        const yayMessage = "Wowza, you're a true fan. The Captain salutes you!";
-        const okayMessage = "Oof, someone's out of touch with their inner child...";
-        const poopMessage = `${this.state.score}/32?? the Captain is insulted...`;
+        const yayMessage = "Tra-la-laaa! Cheers to a true fan.";
+        const okayMessage = "Yowza, someone's out of touch with their inner child...";
+        const poopMessage = `${this.state.score}/32?? Sir Underpants is insulted...`;
         if (this.state.score >=25) {
             this.openModal(yayMessage);
         } else if (this.state.score >= 16 && this.state.score < 25) {
@@ -114,6 +122,17 @@ class Game extends Component {
         console.log(questions.length);
     };
 
+    shuffleCards = (arr) => {
+        let i = arr.length - 1; // 8
+        for (; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1)); // 0 - 8, e.g. 2
+            const temp = arr[i]; // temp = arr[8]
+            arr[i] = arr[j]; // arr[8] = arr[2]
+            arr[j] = temp; // arr[2] = arr[8]
+        }
+        return arr;
+    };
+
     handleGuess = guess => {
         if (guess === this.state.answer) {
             const newScore = this.state.score + 1;
@@ -132,6 +151,7 @@ class Game extends Component {
         const userGuess = e.target.getAttribute('name');
         console.log(`guess: ${userGuess}\nanswer: ${this.state.answer}`);
         this.handleGuess(userGuess);
+        this.shuffleCards(this.state.friends);
     };
 
     render() {
@@ -158,7 +178,7 @@ class Game extends Component {
                     shouldCloseOnOverlayClick={true}
                 >
                     {/* <h2 ref={subtitle => this.subtitle = subtitle}></h2> */}
-                    <div style={styles.messageStyles}>{this.state.modalMessage}</div>
+                    <div style={this.state.modalMessage === "Tra-la-laaa! Cheers to a true fan." ? styles.yayMessageStyles : styles.messageStyles}>{this.state.modalMessage}</div>
                     <button 
                         className='btn btn-default'
                         style={styles.buttonStyles}
